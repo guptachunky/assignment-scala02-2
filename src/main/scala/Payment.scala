@@ -1,3 +1,5 @@
+import org.apache.log4j.Logger
+
 case class PayType(typ: String)
 
 class Payment {
@@ -14,9 +16,13 @@ class Payment {
 }
 
 
-object prac extends App {
+object Prac extends App {
   val obj = new Payment
+
+  val log = Logger.getLogger(this.getClass)
+
   val on = PayType("paytm")
-  print(obj.amount(on, 1000))
+  val amt = 1000
+  log.info(obj.amount(on, amt))
 }
 
